@@ -7,7 +7,7 @@ const updateUser=(reqData)=>{
     return new Promise((resolve,reject)=>{
     
     const profile=parseDatafromRequestData(reqData)
-    profiledb.findOneAndUpdate({_id:ObjectId(reqData._id)},{$set:profile},{upsert:true})
+    profiledb.findOneAndUpdate({_id:ObjectId(reqData._id)},{$set:profile})
         .then((value)=>resolve(value))
         .catch((reason)=>reject(reason))
     })

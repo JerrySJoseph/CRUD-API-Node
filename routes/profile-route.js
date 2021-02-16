@@ -3,6 +3,7 @@ const router= require('express').Router();
 const profileValidator=require('../utils/profile-validator');
 const CreateProfile=require('../data-access/profile/profile-create');
 const UpdateProfile=require('../data-access/profile/profile-update');
+const DeleteProfile=require('../data-access/profile/profile-delete');
 const {readAllUsers,readUser}=require('../data-access/profile/profile-read');
 
 router.post('/create',profileValidator.createValidator,(req,res)=>{
@@ -30,6 +31,8 @@ router.post('/update',profileValidator.updateValidator,(req,res)=>{
 })
 
 router.post('/delete',(req,res)=>{
-    
+    DeleteProfile(req.body)
+    .then((value)=>res.status(200).send(value))
+    .catch((reason)=>res.status(400).send(reason))
 })
 module.exports=router;
