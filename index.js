@@ -14,6 +14,7 @@ const PORT= process.env.PORT || 3000;
 //enable json in request 
 app.use(express.json())
 
+//Registering all queues
 function registerRoutesAndStartListening()
 {
     //Routes for profile functions
