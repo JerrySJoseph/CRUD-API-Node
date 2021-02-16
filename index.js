@@ -3,7 +3,6 @@ const express=require('express');
 const profiledb=require('./db/profile-database');
 const profileRouter=require('./routes/profile-route');
 
-
 //Initialising express app
 const app=express();
 
