@@ -1,4 +1,4 @@
-
+//Method to create Build Profile
 const buildProfile=({
     name,
     email,

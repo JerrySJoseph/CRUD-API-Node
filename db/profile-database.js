@@ -1,8 +1,11 @@
 const mongoose= require('mongoose');
 
-const DEFAULT_CONN_STRING='mongodb://localhost:27017/crud_api_db'
+//Change Database name if you want to 
+const DB_NAME='crud_api_db';
 
+const DEFAULT_CONN_STRING=`mongodb://localhost:27017/${DB_NAME}`
 
+// A Promise to connect TO MongoDB
 const ConnectToDb=(connectionString=DEFAULT_CONN_STRING)=>{
     return new Promise((resolve,reject)=>{
         mongoose.connect(connectionString,{useNewUrlParser:true,useUnifiedTopology:true},
@@ -13,4 +16,6 @@ const ConnectToDb=(connectionString=DEFAULT_CONN_STRING)=>{
             })
     })
 }
+
+
 module.exports={ConnectToDb};
